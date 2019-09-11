@@ -90,26 +90,3 @@ class RADAM():
             self.delta = self.alpha * m_hat
 
         self.eta += self.delta
-        
-        
-       
-#    def full_train_LA(self, num_steps, show = int(100), N=1, k = 3, alph = 0.5):
-#        self.optim = RADAM(eta_init=self.pack([self.prm[key] for key in self.prm]))
-#        ELBO_vals = np.zeros(int(num_steps))
-#        mn_ELBO = 0
-#        
-#        for i in range(1,num_steps+1):
-#            eta_last = np.array(self.optim.eta) 
-#            
-#            for j in range(k): 
-#                self.train_step(N=N, save = True)
-#                
-#            new_eta = eta_last + alph * (self.optim.eta - eta_last)
-#            self.unpack_and_save(new_eta)
-#                        
-#            mn_ELBO += self.optim.ELBO
-#            if i%show == 0 and i>0:
-#                print(i, mn_ELBO/show)
-#                mn_ELBO = 0
-#                
-#        return ELBO_vals
